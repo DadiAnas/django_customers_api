@@ -1,6 +1,7 @@
 from django.db.models import Model, IntegerField, CharField, EmailField, FloatField
 from django_google_maps import fields as map_fields
 
+
 class Customer(Model):
     """
         Customer Model
