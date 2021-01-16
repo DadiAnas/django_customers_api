@@ -20,7 +20,11 @@ The second custom command is `fill_addressses`, this command will consume the Ph
     $ python manage.py load_customers
 
 It use `geopy` libraries which provide a set of API (Google, Nominatim, Photon, TomTom...).
-I chose to work with photon because it's fully free and well worked. Of course Google's api works better but it needs an API KEY.
+I chose to work with photon because it's fully free and well worked. Of course, Google's api may work better but it needs an API KEY.
+
+This application is well tested using `rest_framework.test` library and ready for deployment.
+
+I will deploy it on heroku.
 
 # Usage
 
