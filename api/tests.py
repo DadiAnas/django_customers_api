@@ -1,5 +1,4 @@
 from django.test import TestCase
-from rest_framework.parsers import JSONParser
 from rest_framework.test import APIRequestFactory, force_authenticate
 from api.models import Customer
 from api.views import CustomerAPIView
@@ -18,22 +17,37 @@ class CustomerTestCase(TestCase):
 
 class CustomerAPIViewTestCase(TestCase):
     def setUp(self):
+        # Every test needs access to the request factory.
+        self.factory = APIRequestFactory()
+        # Create a simple customer to validate using it
         Customer.objects.create(id=1001, first_name="anas", last_name="dadi", email="dadi.anas@hotmail.fr",
                                 city="Azrou, Morocco", company="EnsetM", gender="Male", title="Big data Engineer",
                                 longitude=0, latitude=1)
 
-    def test_get_by_id(self):
-        factory = APIRequestFactory()
-        request = factory.get('/customers/1001')
-        view = CustomerAPIView.as_view()
+    def test_get(self):
+        """
+            This function will test get by id
+        """
+        # Create an instance of a GET request to get one customer
+        request = self.factory.get('/customers/1001')
+        # Get the customer created in setUp method
         customer = Customer.objects.get(id=1001)
+        # Using the force_authenticate() method To forcibly authenticate the request
         force_authenticate(request, user=customer)
-        view(request)
-
-    def test_get_many(self):
-        factory = APIRequestFactory()
-        request = factory.get('/customers')
-        customers = Customer.objects.all()
+        # Test view() as if it were deployed at /customers/<int:id>
         view = CustomerAPIView.as_view()
-        force_authenticate(request,user=customers)
-        view(request)
+        response = view(request)
+        # Test if the request works well
+        self.assertEqual(response.status_code, 200)
+
+        # Create an instance of a GET request to get all customers
+        request = self.factory.get('/customers')
+        # Get all created customers
+        customers = Customer.objects.all()
+        # Test view() as if it were deployed at /customers/
+        view = CustomerAPIView.as_view()
+        # Using the force_authenticate() method To forcibly authenticate the request
+        force_authenticate(request, user=customers)
+        response = view(request)
+        # Test if the request works well
+        self.assertEqual(response.status_code, 200)
