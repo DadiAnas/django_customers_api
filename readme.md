@@ -24,7 +24,6 @@ I chose to work with photon because it's fully free and well worked. Of course, 
 
 This application is well tested using `rest_framework.test` library and ready for deployment.
 
-I will deploy it on heroku.
 
 # Usage
 
