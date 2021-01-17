@@ -29,7 +29,7 @@ This application is well tested using `rest_framework.test` library and ready fo
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone git@github.com/DadiAnas/django_customers_api.git
+    $ git clone git@github.com/DadiAnas/django_customers_api
     $ cd django_customers_api
     
 
