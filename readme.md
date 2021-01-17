@@ -79,7 +79,7 @@ Assuming that you installed virualenv package. you can, activate the virtualenv 
     
 Activate the virtual environment
 
-    source venv/bin/activate
+    source venv/scripts/activate
     
 ### Install requirements
 
@@ -87,7 +87,7 @@ Now you are ready to install all project dependencies in your host machine or vi
 
     $ pip install -r requirements.txt
     
-### Migration and execution
+### Migration, test execution
 Then simply apply the migrations:
 
     $ python manage.py migrate
@@ -100,6 +100,11 @@ You can now run the development server:
 In case another app use the default port you can specify a free port:
 
     $ python manage.py runserver 8485
+    
+To do test cases use this commande:
+
+   $ python manage.py test
+   
     
 ### Stop project from execution
 To stop project press ctrl+c:
