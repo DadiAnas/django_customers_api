@@ -8,6 +8,10 @@ one for getting a single customer by its id `customers/<int:id>`.
 
 As a `view` it uses `GenericAPIView` provided by the library `rest_framework` in order to consume the REST API.
 
+.
+<img src='https://raw.githubusercontent.com/DadiAnas/DadiAnas/main/Screenshot%202021-01-17%20032525.png'/>
+.
+
 It Includes two django management `custom commands`. The first one is `load_customers` which give the ability to import the `customers.csv` file into
 database, this command can be used like that:
 
@@ -32,6 +36,15 @@ First clone the repository from Github and switch to the new directory:
     $ git clone https://github.com/DadiAnas/django_customers_api/
     $ cd django_customers_api
     
+If you want to setup the environment in one line use the batch `setup.bat`:
+
+    $ ./setup.py
+  
+ wait until the virtual environement will be created and activated and all dependencies installed (~=45 mb), then run the development server:
+
+    $ python manage.py runserver
+    
+Otherwise, if have any issue try to follow steps below, it will work for you :) 
 
 ### Existing virtualenv
 
