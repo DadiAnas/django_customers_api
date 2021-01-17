@@ -29,7 +29,7 @@ This application is well tested using `rest_framework.test` library and ready fo
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone git@github.com/DadiAnas/django_customers_api
+    $ git clone https://github.com/DadiAnas/django_customers_api/
     $ cd django_customers_api
     
 
@@ -42,7 +42,7 @@ If your project is already in an existing python3 virtualenv first install djang
 And then run the `django-admin.py` command to start the new project:
 
     $ django-admin.py startproject \
-      --template=https://github.com/DadiAnas/django_customers_api \
+      --template=https://github.com/DadiAnas/django_customers_api/ \
       --extension=py,md \
       django_customers_api
       
@@ -60,7 +60,7 @@ If you don't have django installed for python 3 then run:
 And then:
 
     $ python3 -m django startproject \
-      ---template=https://github.com/DadiAnas/django_customers_api \
+      ---template=https://github.com/DadiAnas/django_customers_api/ \
       --extension=py,md \
       django_customers_api
       
